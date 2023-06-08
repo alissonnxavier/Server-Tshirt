@@ -7,7 +7,7 @@ dotenv.config();
 const router = express.Router();
 
 const config = new Configuration({
-    apiKey: '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',
+    apiKey: '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',
 });
 
 const openai = new OpenAIApi(config);
@@ -28,8 +28,6 @@ router.route('/').post(async (req, res) => {
           });
 
         const image = response.data.data[0].b64_json;
-
-        console.log("imageeeem     :      " + image);
 
         res.status(200).json({ photo: image });
 
